@@ -15,6 +15,10 @@
     --bacground-cl: #2196F3;
     --main-bg-cl: #FFFFFF;
     --second-bg-cl: #F5F4FA;
+
+    /* Grid-items */
+    --items: 1;
+    --indent: 30px;
 }
 
 body {
@@ -41,6 +45,8 @@ p {
 
 img {
     display: block;
+    max-width: 100%;
+    height: auto;
 }
 
 
@@ -48,6 +54,17 @@ img {
     list-style: none;
     padding: 0;
     margin: 0;
+}
+
+/* Сітка для колекції елементів */
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--indent);
+}
+
+.grid-item {
+    flex-basis: calc((100% - var(--indent) * (var(--items) - 1)) / var(--items));
 }
 
 .logo,
@@ -125,6 +142,8 @@ img {
     color: var(--second-cl);
 }
 
+.smartphone-icon:hover,
+.smartphone-icon:focus,
 .navigation-link:hover,
 .navigation-link:focus {
     color: var(--acent-cl);
@@ -138,31 +157,40 @@ img {
     display: flex;
     align-items: center;
     margin-left: auto;
+    justify-content: center;
 }
 
-.contact-tel,
-.contact-mail {
-    display: block;
+.contact-link {
+    display: flex;
     padding-top: 32px;
     padding-bottom: 32px;
     font-weight: 500;
     font-size: 14px;
     line-height: 1.14;
     letter-spacing: 0.02em;
+    align-items: center;
     color: var(--main-cl);
 }
 
-.contact-item {
+.contact-item:not(:last-child) {
     margin-right: 50px;
 }
 
-.contact-tel:hover,
-.contact-mail:hover,
-.contact-tel:focus,
-.contact-mail:focus {
+
+.contact-link:hover,
+.contact-link:focus {
     color: var(--acent-cl);
 }
 
+.contact-link:hover .header-icon,
+.contact-link:focus .header-icon {
+    fill: var(--acent-cl);
+}
+
+.header-icon {
+    margin-right: 10px;
+    color: currentColor;
+}
 
 /* ----Main section---- */
 /* Hero section */
@@ -175,6 +203,9 @@ img {
 .hero-section {
     padding-bottom: 200px;
     padding-top: 200px;
+    background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/hero-section/hero-bg.jpg);
+
+    background-size: cover;
 }
 
 .hero-title {
@@ -219,12 +250,25 @@ img {
     align-items: center;
 }
 
-.specific-item {
+.specific-item:not(:last-child) {
     margin-right: 30px;
 }
 
-.specific-item:last-child {
-    margin-right: 0;
+
+.specific-image {
+    display: flex;
+    margin-bottom: 30px;
+    justify-content: center;
+    align-items: center;
+    width: 270px;
+    height: 120px;
+
+    background: #F5F4FA;
+    border-radius: 4px;
+}
+
+.specific-icon {
+    color: currentColor;
 }
 
 .specific-subtitle {
@@ -250,20 +294,13 @@ img {
     padding-top: 0;
 }
 
-.work-title {
-    margin-bottom: 50px;
-}
 
 .work-list {
     display: flex;
 }
 
 .work-item {
-    width: calc((100% - 60px) /3);
-}
-
-.work-item:not(:last-child) {
-    margin-right: 30px;
+    --items: 3;
 }
 
 .title {
@@ -330,11 +367,103 @@ img {
     color: var(--main-cl);
 }
 
+/* social icons */
+.social {
+    display: flex;
+    margin-top: 16px;
+    justify-content: center;
+    align-items: center;
+}
+
+.social-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 44px;
+    height: 44px;
+
+    background-color: #ffffff;
+
+    border-radius: 50%;
+}
+
+.social-link:hover {
+    background-color: #2196F3;
+}
+
+.social-link:hover .social-icon,
+.social-link:focus .social-icon {
+    fill: #ffffff;
+}
+
+.social-item:not(:last-child) {
+    margin-right: 10px;
+}
+
+.social-icon {
+    fill: #AFB1B8;
+}
+
+/* client-section */
+
+.client-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.client-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 170px;
+    height: 92px;
+
+    border: 1px solid #AFB1B8;
+    border-radius: 4px;
+}
+
+.client-item:not(:last-child) {
+    margin-right: 30px;
+}
+
+.client-icon {
+    fill: #AFB1B8;
+}
+
+.client-item:hover,
+.client-item:focus {
+    background-color: #ffffff;
+    border: 1px solid #2196F3;
+}
+
+.client-item:hover .client-icon,
+.client-item:focus .client-icon {
+    fill: #2196F3;
+
+
+}
+
 /* ----footer---- */
 .footer-section {
     padding-top: 60px;
     padding-bottom: 60px;
     background-color: var(--acent-bg-cl);
+}
+
+.container.footer {
+    display: flex;
+    align-items: baseline;
+}
+
+/* .address-block {
+    display: flex;
+} */
+
+.social-block {
+    display: flex;
 }
 
 .footer-logo {
@@ -367,6 +496,9 @@ img {
 .footer-list .link:focus {
     color: var(--acent-cl);
 }
+
+/*social-block  */
+.social-block {}
 
 /* --------Portfolio-------- */
 
