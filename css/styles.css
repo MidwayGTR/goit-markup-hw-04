@@ -1,3 +1,6 @@
+/*#region Index.html */
+
+/*#region Setings */
 :root {
     --main-font: Roboto, sans-serif;
     --secondary-font: Raleway, sans-serif;
@@ -20,6 +23,7 @@
     --items: 1;
     --indent: 30px;
 }
+
 
 body {
     font-family: var(--main-font);
@@ -87,8 +91,9 @@ img {
     padding-bottom: 94px;
 }
 
+/*#endregion Setings*/
 
-/* ----Header section---- */
+/*#region Header section */
 .header {
     border-bottom: 1px solid #ECECEC;
 }
@@ -192,7 +197,10 @@ img {
     fill: #757575;
 }
 
-/* ----Main section---- */
+/*#endregion*/
+
+/*#region Main section */
+
 /* Hero section */
 .hero {
     text-align: center;
@@ -454,7 +462,10 @@ img {
 
 }
 
-/* ----footer---- */
+/*#endregion*/
+
+/*#region footer */
+
 .footer-section {
     padding-top: 60px;
     padding-bottom: 60px;
@@ -541,8 +552,12 @@ img {
     fill: #ffffff;
 }
 
+/*#endregion footer*/
 
-/* --------Portfolio-------- */
+/*#endregion Index.html*/
+
+
+/*#region portfolio */
 
 .project-filter {
     display: flex;
@@ -632,3 +647,5 @@ img {
     letter-spacing: 0.03em;
     color: var(--main-cl);
 }
+
+/*#endregion portfolio*/
